@@ -86,11 +86,11 @@ export default function Carousel() {
     };
   }, [momentum, isDragging]);
 
-  useEffect(() => {
-    const targetRotation = -currentIndex * angleIncrement;
-    const diff = targetRotation - rotation;
-    setRotation(targetRotation);
-  }, [currentIndex]);
+ useEffect(() => {
+  const targetRotation = -currentIndex * angleIncrement;
+  const diff = targetRotation - rotation;
+  setRotation(targetRotation);
+}, [currentIndex, angleIncrement, rotation]);
 
   const handleMouseDown = (e) => {
     setIsDragging(true);
